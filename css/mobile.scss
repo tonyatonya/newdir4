@@ -1,0 +1,1433 @@
+/*************** for mobile only *************/
+$menu-font : 'gotham_mediumregular';
+$body-font : 'proxima_nova_rgregular';
+$body-font-light : 'proxima_novalight' ;
+$body-font-bold : 'proxima_novasemibold';
+$mainlinkcolor :#adadad;
+$mainhovercolor : #404041;
+@mixin ts{
+	-moz-transition: all 0.1s ease-in;
+	-webkit-transition: all 0.1s ease-in;
+	-o-transition: all 0.1s ease-in;
+	transition: all 0.1s ease-in;
+}
+@mixin cubic{
+	-webkit-transition: all 500ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 0;
+	-moz-transition: all 500ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 0;
+	-o-transition: all 500ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 0;
+	-ms-transition: all 500ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 0;
+	transition: all 500ms cubic-bezier(0.445, 0.05, 0.55, 0.95) 0;
+	-moz-transition-property: all;
+	-moz-transition-duration: 500ms;
+	-moz-transition-timing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+	-moz-transition-delay: 0; 
+}
+.topmenu{
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	top:0;
+	left: 0;
+	z-index: 200;
+	background: white;
+	border-bottom: 1px solid #8c8c8c;
+	background: url(../images/right-bg2.jpg) repeat;
+	.company-logo{
+			width: 50px;
+			height: 40px;
+			margin-top: 5px;
+			position: absolute;
+			left: 50%;
+			margin-left: -25px;
+		a{
+			display: block;
+			width: inherit;
+			height: inherit;
+			background-repeat: no-repeat;
+			background-position: center top;
+			background-size: cover;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+	.openside{
+		width: 25px;
+		position: absolute;
+		top:15px;
+		right: 15px;
+		div{
+			width: 90%;
+			height: 2px;
+			margin-top:3px;
+			margin-left: auto;
+			margin-right: auto;
+			background-color: #8c8c8c;
+		}
+	}
+	.opencompany{
+		position: absolute;
+		top:10px;
+		left: 15px;
+	}
+}
+.company-nav.mobile-menu{
+		position: fixed;
+		width: 100%;
+		z-index: 1;
+		left:-100%;
+		top:50px;
+		@include cubic;
+	}
+.menu.mobile-menu{
+	background:white;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left:100%;
+	top:50px;
+	z-index: 200;
+	text-align: center;
+	@include cubic;
+	>ul{
+		display: inline-block;
+		list-style: none;
+		margin-top: 50px;
+		>li.main{
+			margin-bottom: 5px;
+			>a{
+				text-align: center;
+				font-family: 'Gotham Medium';
+				font-size: 10px;
+				letter-spacing: 2px;
+				color: $mainlinkcolor;
+				@include ts;
+				&:hover{
+					color: #404041;
+					@include ts;	
+				}
+			}
+			.submenu{
+				display: none;
+				ul{
+					list-style: none;
+					li{
+						a{
+							text-align: center;
+							font-family: 'Gotham Medium';
+							font-size: 9px;
+							letter-spacing: 2px;
+							color:#4f4f4f;
+							@include ts;
+							&:hover{
+								color: #F05528;
+								@include ts;	
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+body.openmobilemenu{
+	.menu,mobile-menu{
+		left:0;
+		@include cubic;
+	}
+}
+body.opencompanymobilemenu{
+	.company-nav.mobile-menu{
+		left:0;
+		z-index: 200;
+	}
+}
+
+
+
+/**** iPhone 2G-4s ****/
+@media only screen 
+and (min-device-width : 213px) 
+and (max-device-width : 480px) {
+	body{
+		width: 100%;
+		overflow: auto;
+		&.start{
+			#body{
+				left:0px;
+			}
+		}
+	}
+	.desktop-menu{
+		display: none;
+	}
+	.mobile-menu{
+	display: block;
+	}
+	.company-nav-tab{
+		display: none;
+	}	
+	#body{
+		width: 100%;
+		left: 0;
+		top:50px;
+	}
+	.main-content{
+		margin-left: 0;
+		width: 100%;	
+	}
+	.pagesection{
+		min-height: 180px;
+		
+		&.video{
+			.videoframe{
+				min-height: 180px;
+			}
+			.hover{
+					min-height: 180px;
+					height: 180px;
+					width: 100%;
+				.hoverbox{
+					.swap-box{
+						width: 140px;
+						height: 140px;
+						.box{
+							width: 140px;
+							height: 140px;
+							position: relative;
+							.toptext{
+								width: 95%;
+								height: 70px;
+								h3{
+									font-size: 12px;
+								}
+								.line{
+									position: absolute;
+									bottom: 0;
+									left: 50%;
+									margin-left: -30px;
+									width: 60px;
+									height: 1px;
+									background-color: #404041;
+								}
+							}
+							.bottomtext{
+								width: 95%;
+								h4{
+									font-size: 10px;
+								}
+								h5{
+									font-size: 8px;
+								}
+							}
+						}
+						
+					}
+				}
+			}
+		}
+		&.welcometext{
+			height: 320px;
+		}
+		.leadtext{
+			width: 100%;
+			height: 320px;
+			min-height: 320px;
+			padding-left: 15px;
+			padding-right: 15px;
+			text-align: center;
+			font-size: 30px;
+		}
+	}
+	.contactform{
+		table{
+			width: 80% !important;
+			}
+	}
+	.companyprofile{
+		p{
+			padding-left: 50px;
+			padding-right: 50px;
+		}
+	}
+	.newspage{
+		.pagesection{
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		.hotnews{
+			.news-content{
+				width: 100%;
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+	.news-list{
+		padding-left: 15px;
+		padding-right: 15px;
+		.news-child{
+			display: block;
+			width: 100%;
+			padding: 0;
+			
+		}
+	}
+	.contact-info{
+		>div{
+			top:20%;
+		}
+	}
+	.showreelpage{
+		.pagesection{
+			background-image: none;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		.profile{
+			h2{
+				font-size: 35px;
+				margin-top: 55px;
+				width: 95%;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
+			.footer-btn{
+				position: absolute;
+				bottom: 20px;
+			}
+		}
+	}
+	.pagesection.video.active{
+		height: 180px;
+		.bottomcontent{
+			display: none;
+		}
+	}
+	.tv{
+		.topmenu{
+			background: url(../images/right-bg2.jpg) repeat;
+		}
+		#tv-list{
+			.tv-child{
+				height: 180px;
+				figure{
+					img{
+						width: 100%;
+						height: auto;
+						position: absolute;
+						min-height: 180px;
+						left: 0;
+					}
+					figcaption{
+						width: 100%;
+						background: none;
+						h2{
+							display: none;
+						}
+					}
+				}
+				&:nth-child(even){
+					img{
+						left: 0%;
+					}
+					figcaption{
+						left: 0;	
+					}
+				}
+				&:nth-child(odd){
+					figure{
+						img{
+							left: 0;
+						}
+						figcaption{
+							left: 0;
+						}
+					}
+				}
+			}
+			.toppagebar{
+				.cat-menu{
+					li{
+						a{
+							font-size: 8px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.dirplay{
+		.topmenu{
+			background: url(../images/4playbg.jpg) repeat;
+		}
+		#play-list{
+			.play-alllist{
+				height: auto !important;
+				.play-child{
+					display: block;
+					&:first-child,
+					&:nth-child(2),
+					&:nth-child(3),
+					&:nth-child(4),
+					&:nth-child(5),
+					&:nth-child(6),
+					&:nth-child(7),
+					&:nth-child(8),
+					&:nth-child(9),
+					&:nth-child(10),
+					&:nth-child(11),
+					&:nth-child(12),
+					&:nth-child(13),
+					&:nth-child(14),
+					&:nth-child(15){
+						width: 100% !important;
+						height: 180px !important;
+						position: relative;
+						top:0;
+						left: 0;
+						img{
+							position: absolute;
+							left: 0;
+							right: 0;
+							top:0;
+							/* height: 180px; */
+							/* width: auto; */
+							width: 100%;
+							height: auto;
+						}
+					}
+					figure{
+						figcaption{
+							.holder{
+								h3{
+									display: none;
+								}
+								b{
+									display: none;
+								}
+							}
+						}
+					}
+					.footer-btn{
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/*************** iPhone 6 plus Landscape *************/
+
+@media only screen 
+and (min-device-width : 540px) 
+and (max-device-width : 960px)
+and (-webkit-device-pixel-ratio: 3) 
+and (orientation : landscape) {
+	
+	body{
+		width: 100%;
+		overflow: auto;
+		&.start{
+			#body{
+				left:0px;
+			}
+		}
+	}
+	.desktop-menu{
+		display: none;
+	}
+	.mobile-menu{
+	display: block;
+	}
+	.company-nav-tab{
+		display: none;
+	}	
+	#body{
+		width: 100%;
+		left: 0;
+		top:50px;
+	}
+	.main-content{
+		margin-left: 0;
+		width: 100%;	
+	}
+	.pagesection{
+		min-height: 320px;
+		&.video{
+			.videoframe{
+				min-height: 320px;
+			}
+			.hover{
+					min-height: 320px;
+					height: 320px;
+					width: 100%;
+				.hoverbox{
+					.swap-box{
+						width: 140px;
+						height: 140px;
+						.box{
+							width: 140px;
+							height: 140px;
+							position: relative;
+							.toptext{
+								width: 95%;
+								height: 70px;
+								h3{
+									font-size: 12px;
+								}
+								.line{
+									position: absolute;
+									bottom: 0;
+									left: 50%;
+									margin-left: -30px;
+									width: 60px;
+									height: 1px;
+									background-color: #404041;
+								}
+							}
+							.bottomtext{
+								width: 95%;
+								h4{
+									font-size: 10px;
+								}
+								h5{
+									font-size: 8px;
+								}
+							}
+						}
+						
+					}
+				}
+			}
+		}
+		&.welcometext{
+			height: 320px;
+		}
+		.leadtext{
+			width: 100%;
+			height: 320px;
+			min-height: 320px;
+			padding-left: 15px;
+			padding-right: 15px;
+			text-align: center;
+			font-size: 30px;
+		}
+	}
+	.contactform{
+		table{
+			width: 80% !important;
+			}
+	}
+	.companyprofile{
+		p{
+			padding-left: 50px;
+			padding-right: 50px;
+		}
+	}
+	.newspage{
+		.pagesection{
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		.hotnews{
+			.news-content{
+				width: 100%;
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+	.news-list{
+		padding-left: 15px;
+		padding-right: 15px;
+		.news-child{
+			display: block;
+			width: 100%;
+			padding: 0;
+			
+		}
+	}
+	.contact-info{
+		>div{
+			top:20%;
+		}
+	}
+	.showreelpage{
+		.pagesection{
+			background-image: none;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		.profile{
+			h2{
+				font-size: 35px;
+				margin-top: 55px;
+				width: 95%;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
+			.footer-btn{
+				position: absolute;
+				bottom: 20px;
+			}
+		}
+	}
+	.pagesection.video.active{
+		height: 320px;
+		.bottomcontent{
+			display: none;
+		}
+	}
+	.tv{
+		.topmenu{
+			background: url(../images/right-bg2.jpg) repeat;
+		}
+		#tv-list{
+			.tv-child{
+				height: 320px;
+				figure{
+					img{
+						width: 100%;
+						height: auto;
+						position: absolute;
+						min-height: 320px;
+						left: 0;
+					}
+					figcaption{
+						width: 100%;
+						background: none;
+						h2{
+							display: none;
+						}
+					}
+				}
+				&:nth-child(even){
+					img{
+						left: 0%;
+					}
+					figcaption{
+						left: 0;	
+					}
+				}
+				&:nth-child(odd){
+					figure{
+						img{
+							left: 0;
+						}
+						figcaption{
+							left: 0;
+						}
+					}
+				}
+			}
+			.toppagebar{
+				.cat-menu{
+					li{
+						a{
+							font-size: 8px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.dirplay{
+		.topmenu{
+			background: url(../images/4playbg.jpg) repeat;
+		}
+		#play-list{
+			.play-alllist{
+				height: auto !important;
+				.play-child{
+					display: block;
+					&:first-child,
+					&:nth-child(2),
+					&:nth-child(3),
+					&:nth-child(4),
+					&:nth-child(5),
+					&:nth-child(6),
+					&:nth-child(7),
+					&:nth-child(8),
+					&:nth-child(9),
+					&:nth-child(10),
+					&:nth-child(11),
+					&:nth-child(12),
+					&:nth-child(13),
+					&:nth-child(14),
+					&:nth-child(15){
+						width: 100% !important;
+						height: 320px !important;
+						position: relative;
+						top:0;
+						left: 0;
+						img{
+							position: absolute;
+							left: 0;
+							right: 0;
+							top:0;
+							width: 100%;
+							height: auto;
+						}
+					}
+					figure{
+						figcaption{
+							.holder{
+								h3{
+									display: none;
+								}
+								b{
+									display: none;
+								}
+							}
+						}
+					}
+					.footer-btn{
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+/*************** samsung Tap ipad2 *************/
+@media only screen 
+and (min-device-width : 600px) 
+and (max-device-width : 1024px)
+and (orientation : portrait){
+	.company-nav{
+		width: 145px;
+	}
+	.main-content{
+	
+		margin-left: 145px;
+	}
+	.tv{
+		#tv-list{
+			.tv-child{
+				figure{
+					figcaption{
+						h2{
+							font-size: 15px;
+						}	
+					}
+				}
+			}
+		}
+	}	
+	
+	
+	body.start{
+		.company-nav-tab{
+			left:-31px;
+		}
+		.mainmenu{
+			left: 145px;
+		}
+		#body{
+			left:145px;
+		}
+		.topool{
+			opacity: 0;
+		}
+	}
+	body.openMenu{
+		.company-nav-tab{
+			left:-31px;
+			@include cubic;
+		}
+		.mainmenu{
+			left: 145px;
+			@include cubic;
+		}
+		#body{
+			left:145px;
+		}
+		.topool{
+			opacity: 0;
+			@include cubic;
+		}
+	}
+	
+	
+}
+
+
+
+
+/*************** Amazon Kindle Fire *************/
+/*
+@media only screen 
+and (min-device-width : 600px) 
+and (max-device-width : 1024px){
+	
+	body{
+		width: 100%;
+		overflow: auto;
+		&.start{
+			#body{
+				left:0px;
+			}
+		}
+	}
+	.desktop-menu{
+		display: none;
+	}
+	.mobile-menu{
+	display: block;
+	}
+	.company-nav-tab{
+		display: none;
+	}	
+	#body{
+		width: 100%;
+		left: 0;
+		top:50px;
+	}
+	.main-content{
+		margin-left: 0;
+		width: 100%;	
+	}
+	.pagesection{
+		min-height: 500px;
+		
+		&.video{
+			.videoframe{
+				min-height: 500px;
+			}
+			.hover{
+					min-height: 500px;
+					height: 500px;
+					width: 100%;
+				.hoverbox{
+					.swap-box{
+						width: 200px;
+						height: 200px;
+						.box{
+							width: 200px;
+							height: 200px;
+							position: relative;
+							.toptext{
+								width: 95%;
+								height: 100px;
+								h3{
+									font-size: 15px;
+								}
+								.line{
+									position: absolute;
+									bottom: 0;
+									left: 50%;
+									margin-left: -50px;
+									width: 100px;
+									height: 1px;
+									background-color: #404041;
+								}
+							}
+							.bottomtext{
+								width: 95%;
+								h4{
+									font-size: 10px;
+								}
+								h5{
+									font-size: 8px;
+								}
+							}
+						}
+						
+					}
+				}
+			}
+		}
+		&.welcometext{
+			height: 500px;
+		}
+		.leadtext{
+			width: 100%;
+			height: 500px;
+			min-height: 500px;
+			padding-left: 15px;
+			padding-right: 15px;
+			text-align: center;
+			font-size: 30px;
+		}
+	}
+	.contactform{
+		table{
+			width: 80% !important;
+			}
+	}
+	.companyprofile{
+		p{
+			padding-left: 50px;
+			padding-right: 50px;
+		}
+	}
+	.newspage{
+		.pagesection{
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		.hotnews{
+			.news-content{
+				width: 100%;
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+	.news-list{
+		padding-left: 15px;
+		padding-right: 15px;
+		.news-child{
+			display: block;
+			width: 100%;
+			padding: 0;
+			
+		}
+	}
+	.contact-info{
+		>div{
+			top:20%;
+		}
+	}
+	.showreelpage{
+		.pagesection{
+			background-image: none;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		.profile{
+			h2{
+				font-size: 35px;
+				margin-top: 55px;
+				width: 95%;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
+			.footer-btn{
+				position: absolute;
+				bottom: 20px;
+			}
+		}
+	}
+	.pagesection.video.active{
+		height: 500px;
+		.bottomcontent{
+			display: none;
+		}
+	}
+	.tv{
+		.topmenu{
+			background: url(../images/right-bg2.jpg) repeat;
+		}
+		#tv-list{
+			.tv-child{
+				height: 500px;
+				figure{
+					img{
+						width: 100%;
+						height: auto;
+						position: absolute;
+						min-height: 320px;
+						left: 0;
+					}
+					figcaption{
+						width: 100%;
+						background: none;
+						h2{
+							display: none;
+						}
+					}
+				}
+				&:nth-child(even){
+					img{
+						left: 0%;
+					}
+					figcaption{
+						left: 0;	
+					}
+				}
+				&:nth-child(odd){
+					figure{
+						img{
+							left: 0;
+						}
+						figcaption{
+							left: 0;
+						}
+					}
+				}
+			}
+			.toppagebar{
+				.cat-menu{
+					li{
+						a{
+							font-size: 8px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.dirplay{
+		.topmenu{
+			background: url(../images/4playbg.jpg) repeat;
+		}
+		#play-list{
+			.play-alllist{
+				height: auto !important;
+				.play-child{
+					display: block;
+					&:first-child,
+					&:nth-child(2),
+					&:nth-child(3),
+					&:nth-child(4),
+					&:nth-child(5),
+					&:nth-child(6),
+					&:nth-child(7),
+					&:nth-child(8),
+					&:nth-child(9),
+					&:nth-child(10),
+					&:nth-child(11),
+					&:nth-child(12),
+					&:nth-child(13),
+					&:nth-child(14),
+					&:nth-child(15){
+						width: 100% !important;
+						height: 500px !important;
+						position: relative;
+						top:0;
+						left: 0;
+						img{
+							position: absolute;
+							left: 0;
+							right: 0;
+							top:0;
+							width: auto;
+							height:120%;
+						}
+					}
+					figure{
+						figcaption{
+							.holder{
+								h3{
+									display: none;
+								}
+								b{
+									display: none;
+								}
+							}
+						}
+					}
+					.footer-btn{
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@media only screen 
+and (min-device-width : 600px) 
+and (max-device-width : 1020px)
+and (orientation : portrait){
+	.pagesection{
+		min-height: 500px;
+		&.video{
+			.videoframe{
+				min-height: 500px;
+			}
+			.hover{
+					min-height: 500px;
+					height: 500px;
+				.hoverbox{
+					.swap-box{
+						width: 200px;
+						height: 200px;
+						.box{
+							width: 200px;
+							height: 200px;
+							position: relative;
+							.toptext{
+								width: 95%;
+								height: 100px;
+								h3{
+									font-size: 12px;
+								}
+								.line{
+									position: absolute;
+									bottom: 0;
+									left: 50%;
+									margin-left: -50px;
+									width: 100px;
+									height: 1px;
+									background-color: #404041;
+								}
+							}
+						}
+						
+					}
+				}
+			}
+		}
+		&.welcometext{
+			height: 500px;
+		}
+		.leadtext{
+			height: 500px;
+			min-height: 320px;
+		}
+	}
+
+	.contact-info{
+		>div{
+			top:20%;
+		}
+	}
+	.pagesection.video.active{
+		height: 500px;
+	}
+	.tv{
+		#tv-list{
+			.tv-child{
+				height: 500px;
+				figure{
+					img{
+						width: auto;
+						position: absolute;
+						left: -25%;
+						top:0;
+						min-height: 500px;
+					}
+				}
+			}
+		}
+	}
+	.dirplay{
+		#play-list{
+			.play-alllist{
+				.play-child{
+					&:first-child,
+					&:nth-child(2),
+					&:nth-child(3),
+					&:nth-child(4),
+					&:nth-child(5),
+					&:nth-child(6),
+					&:nth-child(7),
+					&:nth-child(8),
+					&:nth-child(9),
+					&:nth-child(10),
+					&:nth-child(11),
+					&:nth-child(12),
+					&:nth-child(13),
+					&:nth-child(14),
+					&:nth-child(15){
+						height: 500px !important;
+						img{
+							position: absolute;
+							left: 0;
+							right: 0;
+							top:0;
+							width: auto;
+							height: 500px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+*/
+
+/*************** Nexus 10 ********************/
+/*
+@media only screen 
+and (min-device-width : 800px) 
+and (max-device-width : 1280px) 
+and (orientation : portrait) {	
+	body{
+		width: 100%;
+		overflow: auto;
+		&.start{
+			#body{
+				left:0px;
+			}
+		}
+	}
+	.desktop-menu{
+		display: none;
+	}
+	.mobile-menu{
+	display: block;
+	}
+	.company-nav-tab{
+		display: none;
+	}	
+	#body{
+		width: 100%;
+		left: 0;
+		top:50px;
+	}
+	.main-content{
+		margin-left: 0;
+		width: 100%;	
+	}
+	.pagesection{
+		min-height: 320px;
+		
+		&.video{
+			.videoframe{
+				min-height: 320px;
+			}
+			.hover{
+					min-height: 320px;
+					height: 320px;
+					width: 100%;
+				.hoverbox{
+					.swap-box{
+						width: 140px;
+						height: 140px;
+						position: relative;
+						.box{
+							width: 140px;
+							height: 140px;
+							.toptext{
+								width: 95%;
+								height: 70px;
+								h3{
+									font-size: 12px;
+								}
+								.line{
+									position: absolute;
+									bottom: 0;
+									left: 50%;
+									margin-left: -30px;
+									height: 1px;
+									background-color: #404041;
+								}
+							}
+							.bottomtext{
+								width: 95%;
+								h4{
+									font-size: 10px;
+								}
+								h5{
+									font-size: 8px;
+								}
+							}
+						}
+						
+					}
+				}
+			}
+		}
+		&.welcometext{
+			height: 320px;
+		}
+		.leadtext{
+			width: 100%;
+			height: 320px;
+			min-height: 320px;
+			padding-left: 15px;
+			padding-right: 15px;
+			text-align: center;
+			font-size: 30px;
+		}
+	}
+	.contactform{
+		table{
+			width: 80% !important;
+			}
+	}
+	.companyprofile{
+		p{
+			padding-left: 50px;
+			padding-right: 50px;
+		}
+	}
+	.newspage{
+		.pagesection{
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		.hotnews{
+			.news-content{
+				width: 100%;
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+	.news-list{
+		padding-left: 15px;
+		padding-right: 15px;
+		.news-child{
+			display: block;
+			width: 100%;
+			padding: 0;
+			
+		}
+	}
+	.contact-info{
+		>div{
+			top:20%;
+		}
+	}
+	.showreelpage{
+		.pagesection{
+			background-image: none;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		.profile{
+			h2{
+				font-size: 35px;
+				margin-top: 55px;
+				width: 95%;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
+			.footer-btn{
+				position: absolute;
+				bottom: 20px;
+			}
+		}
+	}
+	.pagesection.video.active{
+		height: 320px;
+		.bottomcontent{
+			display: none;
+		}
+	}
+	.tv{
+		.topmenu{
+			background: url(../images/right-bg2.jpg) repeat;
+		}
+		#tv-list{
+			.tv-child{
+				height: 320px;
+				figure{
+					img{
+						width: 100%;
+						height: auto;
+						position: absolute;
+						min-height: 320px;
+						left: 0;
+					}
+					figcaption{
+						width: 100%;
+						background: none;
+						h2{
+							display: none;
+						}
+					}
+				}
+				&:nth-child(even){
+					img{
+						left: 0%;
+					}
+					figcaption{
+						left: 0;	
+					}
+				}
+				&:nth-child(odd){
+					figure{
+						img{
+							left: 0;
+						}
+						figcaption{
+							left: 0;
+						}
+					}
+				}
+			}
+			.toppagebar{
+				.cat-menu{
+					li{
+						a{
+							font-size: 8px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.dirplay{
+		.topmenu{
+			background: url(../images/4playbg.jpg) repeat;
+		}
+		#play-list{
+			.play-alllist{
+				height: auto !important;
+				.play-child{
+					display: block;
+					&:first-child,
+					&:nth-child(2),
+					&:nth-child(3),
+					&:nth-child(4),
+					&:nth-child(5),
+					&:nth-child(6),
+					&:nth-child(7),
+					&:nth-child(8),
+					&:nth-child(9),
+					&:nth-child(10),
+					&:nth-child(11),
+					&:nth-child(12),
+					&:nth-child(13),
+					&:nth-child(14),
+					&:nth-child(15){
+						width: 100% !important;
+						height: 320px !important;
+						position: relative;
+						top:0;
+						left: 0;
+						img{
+							position: absolute;
+							left: 0;
+							right: 0;
+							top:0;
+							width: 100%;
+							height: auto;
+						}
+					}
+					figure{
+						figcaption{
+							.holder{
+								h3{
+									display: none;
+								}
+								b{
+									display: none;
+								}
+							}
+						}
+					}
+					.footer-btn{
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+*/
