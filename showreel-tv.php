@@ -18,7 +18,7 @@
 				</ul>
 			</div>
 			<?php for($i=0;$i<4;$i++){ ?>
-				<article class="pagesection tv-child">				
+			<article class="pagesection tv-child">				
 				<figure>
 					<img src="images/testthumb1.jpg">
 					<figcaption>

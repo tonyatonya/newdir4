@@ -8,7 +8,7 @@
 <?php include('inc_companynav.php');?>
 <div id="body">
 		<?php include('inc_mainmenu.php'); ?>
-		<section class="main-content" data-animsition-in="fade-in" id="play-list" class="play-list">
+		<section class="main-content play-list" data-animsition-in="fade-in" id="play-list">
 			<div class="toppagebar col-md-12">
 				4PLAY
 			</div>
